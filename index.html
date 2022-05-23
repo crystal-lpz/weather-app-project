@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+   <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/style.css" />
+
+    <title>weather app</title>
+  </head>
+  <body>
+    <div class="container">
+       
+      <div class="weather-app">
+        <form class="search-form" id="search-form">
+          <div class="row">
+            <div class="col-6">
+              
+              <input
+                type="search"
+                placeholder="Type a city.."
+                autofocus="on"
+                autocomplete="off"
+                id="city-input"
+                class="form-control shadow-sm"
+              />
+            </div>
+              <div class="col-3">
+              <input
+                type="submit"
+                value="Search"
+                class="form-control btn btn-primary shadow-sm"
+              />
+            </div>
+        </form>  
+             <div class="col-3">
+              <input
+                type="submit"
+                value="Current"
+                class="form-control btn btn-light shadow-sm"
+                id="current-location"
+              />
+            </div>
+                 </div>
+        
+        <h1>San Francisco, CA</h1>
+          <div class="subHeader">
+             
+          </div>
+          
+       <img class="topImg" src="images/main.svg" />
+        <div class="subHeaderTwo" id="description">--Mostly sunny--</div>   
+      
+          <div class="row">
+         <div class="col">
+             <Span class="float-left" id="main-temp">60</Span>°F
+            
+          </div>
+          <div class="col">
+            <ul><div class="phw">
+              <li>Precipitation: 1%</li>
+              <li> Humidity: <span id="humidity">67</span>%</li>
+              <li>Wind: <span id="wind-speed">18 </span>mph</li></div>
+            </ul>
+          </div>
+          
+           </div>
+    
+        
+        
+        
+
+
+    <div class="container">
+    <div class="sevenDay">
+    <div class="row">
+       <div class="col">
+             <ul>
+               <li class="day">Wed</li>
+              <li><img class="icon" src="images/Sunny - cloudy.svg" /> </li>
+               <li class="temp">62°</li>
+             </ul>
+        </div>
+
+          <div class="col">
+           <ul>
+             <li class="day">Thur</li>
+             <li><img class="icon" src="images/Sunny - cloudy.svg" /> </li>
+             <li class="temp">63°</li>
+           </ul>
+          </div>
+
+         <div class="col">
+          <ul>
+            <li class="day">Fri</li>
+            <li><img class="icon" src="images/Sunny - cloudy.svg" /> </li>
+            <li class="temp">63°</li>
+          </ul> 
+        </div>
+
+        <div class="col">
+          <ul>
+            <li class="day">Sat</li>
+            <li><img class="icon" src="images/Cloudy.svg" /> </li>
+            <li class="temp">62°</li>
+          </ul> 
+        </div>
+
+          <div class="col">
+          <ul>
+            <li class="day">Sun</li>
+            <li><img class="icon" src="images/Cloudy.svg" /> </li>
+            <li class="temp">57°</li>
+          </ul> 
+        </div>
+
+        <div class="col">
+          <ul>
+            <li class="day">Mon</li>
+            <li><img class="icon" src="images/Sunny - cloudy.svg" /> </li>
+            <li class="temp">56°</li>
+          </ul> 
+        </div>
+
+       <div class="col">
+          <ul>
+            <li class="day">Tue</li>
+            <li><img class="icon" src="images/Sunny - cloudy.svg" /> </li>
+            <li class="temp">57°</li>
+          </ul> 
+        </div>
+
+         <div class="col">
+          <ul>
+            <li class="day">Wed</li>
+            <li><img class="icon" src="images/Cloudy.svg" /> </li>
+            <li class="temp">62°</li>
+          </ul> 
+        </div>
+        
+        
+        
+        
+        
+        </div>
+        </div>
+</div>  
+      </div>
+    </div>
+    </div>
+     <script src="src/index.js"></script>
+  </body>
+</html>

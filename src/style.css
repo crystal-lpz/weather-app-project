@@ -1,0 +1,81 @@
+body {
+  margin: 0 auto;
+  padding-top: 40px;
+  display: block;
+  font-family: "Roboto Slab", serif;
+}
+h1 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bolder;
+  margin-top: 30px;
+  color: rgb(0, 65, 0);
+}
+h4 {
+  font-weight: normal;
+  text-align: right;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+
+.subHeader {
+  text-align: center;
+  font-weight: normal;
+  line-height: 20px;
+}
+.subHeaderTwo {
+  text-align: center;
+  font-weight: normal;
+  font-size: 30px;
+  text-transform: capitalize;
+}
+
+.float-left {
+  font-size: 80px;
+  text-align: right;
+  color: rgb(0, 65, 0);
+  line-height: 1;
+}
+.phw {
+  text-align: right;
+  margin-top: 20px;
+}
+.topImg {
+  max-height: 700px;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+.weather-app {
+  border: 2px solid cornflowerblue;
+  border-radius: 10px;
+  background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 700px;
+}
+.sevenDay {
+  border: 2px solid rgb(163, 217, 221);
+  margin-top: 80px;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(100, 148, 237, 0.473);
+}
+.day {
+  color: #ffff;
+  text-align: center;
+}
+.temp {
+  color: #ffff;
+  text-align: center;
+}
+.icon {
+  max-height: 40px;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
