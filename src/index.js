@@ -9,7 +9,7 @@ function formatDate(date) {
     "Saturday",
   ];
   let day = days[date.getDay()];
-  let number = date.getDate();
+
   let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -19,7 +19,7 @@ function formatDate(date) {
     minutes = `0${minutes}`;
   }
 
-  return `${day} ${number}, ${hours}:${minutes} `;
+  return `${day}  ${hours}:${minutes} `;
 }
 let date = document.querySelector(".subHeader");
 let currentTime = new Date();
@@ -34,7 +34,7 @@ function showTemperature(respond) {
   document.querySelector("#wind-speed").innerHTML = Math.round(
     respond.data.wind.speed
   );
-  speed.innerHTML = `${windSpeed}`;
+
   document.querySelector(`#description`).innerHTML =
     respond.data.weather[0].description;
 }
@@ -56,15 +56,20 @@ function getCurrentPosition(event) {
 let button = document.querySelector("#current-location");
 button.addEventListener("click", getCurrentPosition);
 
-function lookUp(event) {
-  event.preventDefault();
+function search(city) {
   let apiKey = "ca32155fa8562e7d4743f24dd7e13dc9";
   let imperialUnit = "imperial";
-  let input = document.querySelector("#city-input");
   let baseLink = "https://api.openweathermap.org/data/2.5/weather?";
-  let apiUrl = `${baseLink}q=${input.value}&appid=${apiKey}&units=${imperialUnit}`;
+  let apiUrl = `${baseLink}q=${city}&appid=${apiKey}&units=${imperialUnit}`;
   axios.get(apiUrl).then(showTemperature);
+  apiKey = "ca32155fa8562e7d4743f24dd7e13dc9";
+}
+function lookUp(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
 }
 
 let citySearch = document.querySelector("#search-form");
 citySearch.addEventListener("submit", lookUp);
+search("San Francisco");
