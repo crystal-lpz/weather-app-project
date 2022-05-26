@@ -21,11 +21,12 @@ function formatDate(date) {
 
   return `${day}  ${hours}:${minutes} `;
 }
-let date = document.querySelector(".subHeader");
+let date = document.querySelector(".timeHeader");
 let currentTime = new Date();
 date.innerHTML = formatDate(currentTime);
 
 function showTemperature(respond) {
+  let iconElement = document.querySelector("#icon");
   document.querySelector(`h1`).innerHTML = respond.data.name;
   document.querySelector("#main-temp").innerHTML = Math.round(
     respond.data.main.temp
@@ -34,9 +35,14 @@ function showTemperature(respond) {
   document.querySelector("#wind-speed").innerHTML = Math.round(
     respond.data.wind.speed
   );
-
+  console.log(respond);
   document.querySelector(`#description`).innerHTML =
     respond.data.weather[0].description;
+  iconElement.setAttribute(
+    "src",
+    ` http://openweathermap.org/img/wn/${respond.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", respond.data.weather[0].description);
 }
 
 function showPosition(position) {

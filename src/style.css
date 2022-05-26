@@ -5,15 +5,13 @@ body {
   font-family: "Roboto Slab", serif;
 }
 h1 {
-  text-align: center;
-  font-size: 30px;
-  font-weight: bolder;
-  margin-top: 30px;
-  color: rgb(0, 65, 0);
-}
-h4 {
-  font-weight: normal;
   text-align: right;
+  font-size: 22px;
+  font-weight: bolder;
+  line-height: 26px;
+  margin-top: 30px;
+  margin-bottom: 0;
+  color: 48484a;
 }
 h5 {
   margin: 0;
@@ -27,35 +25,29 @@ ul {
 }
 li {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.subHeader {
-  text-align: center;
-  font-weight: normal;
+.timeHeader {
+  text-align: right;
+  font-size: 16px;
+  display: block;
+  top: 1px;
+}
+.description {
+  text-align: right;
+  font-size: 16px;
+  text-transform: capitalize;
+  font-weight: 400;
   line-height: 20px;
 }
-.subHeaderTwo {
-  text-align: center;
-  font-weight: normal;
-  font-size: 30px;
-  text-transform: capitalize;
+.phw {
+  margin-top: 30px;
+  text-align: left;
+  font-size: 12px;
 }
 
-.float-left {
-  font-size: 80px;
-  text-align: right;
-  color: rgb(0, 65, 0);
-  line-height: 1;
-}
-.phw {
-  text-align: right;
-  margin-top: 20px;
-}
-.topImg {
-  max-height: 700px;
-  margin-top: 10px;
-  margin-bottom: 0;
-}
 .weather-app {
   border: 2px solid cornflowerblue;
   border-radius: 10px;
@@ -64,6 +56,7 @@ li {
   margin: 20px auto;
   max-width: 700px;
 }
+
 .sevenDay {
   border: 2px solid rgb(163, 217, 221);
   margin-top: 80px;
@@ -84,4 +77,18 @@ li {
   display: block;
   margin: 0 auto;
   text-align: center;
+}
+
+.col {
+  padding: 0;
+}
+#main-temp {
+  font-size: 48px;
+  text-align: left;
+}
+
+.units {
+  position: relative;
+  font-size: 16px;
+  top: -23px;
 }
