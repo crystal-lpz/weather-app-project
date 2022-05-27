@@ -28,7 +28,13 @@ li {
   margin: 0;
   padding: 0;
 }
-
+strong {
+  font-size: 48px;
+  font-weight: 400;
+  display: inline;
+  line-height: 60px;
+  margin-top: 30px;
+}
 .timeHeader {
   text-align: right;
   font-size: 16px;
@@ -51,7 +57,7 @@ li {
 .weather-app {
   border: 2px solid cornflowerblue;
   border-radius: 10px;
-  background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+  background: linear-gradient(to top, #fff1eb4f 0%, #ace0f9 100%);
   padding: 20px;
   margin: 20px auto;
   max-width: 700px;
@@ -72,22 +78,29 @@ li {
   color: #ffff;
   text-align: center;
 }
-.icon {
-  max-height: 40px;
+.sevenDayIcon {
   display: block;
+  max-width: 60px;
   margin: 0 auto;
-  text-align: center;
 }
-
 .col {
   padding: 0;
 }
-#main-temp {
-  font-size: 48px;
-  text-align: left;
+.col-4 {
+  max-width: 100px;
+  padding: 0;
+}
+.active {
+  color: black;
+  cursor: default;
+}
+.active:hover {
+  text-decoration: none;
 }
 
 .units {
+  margin-top: 30px;
+  margin-bottom: 0;
   position: relative;
   font-size: 16px;
   top: -23px;

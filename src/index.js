@@ -35,7 +35,7 @@ function showTemperature(respond) {
   document.querySelector("#wind-speed").innerHTML = Math.round(
     respond.data.wind.speed
   );
-  console.log(respond);
+
   document.querySelector(`#description`).innerHTML =
     respond.data.weather[0].description;
   iconElement.setAttribute(
@@ -43,6 +43,7 @@ function showTemperature(respond) {
     ` http://openweathermap.org/img/wn/${respond.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", respond.data.weather[0].description);
+  fahrenheitTemperature = respond.data.main.temp;
 }
 
 function showPosition(position) {
@@ -70,12 +71,37 @@ function search(city) {
   axios.get(apiUrl).then(showTemperature);
   apiKey = "ca32155fa8562e7d4743f24dd7e13dc9";
 }
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
+  let celsiusTemperature = ((fahrenheitTemperature - 32) * 5) / 9;
+  let temperatureElement = document.querySelector("#main-temp");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+
+  let temperatureElement = document.querySelector("#main-temp");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
 function lookUp(event) {
   event.preventDefault();
   let cityInputElement = document.querySelector("#city-input");
   search(cityInputElement.value);
 }
 
+let fahrenheitTemperature = null;
 let citySearch = document.querySelector("#search-form");
 citySearch.addEventListener("submit", lookUp);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
 search("San Francisco");
