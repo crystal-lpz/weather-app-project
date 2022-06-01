@@ -25,6 +25,32 @@ let date = document.querySelector(".timeHeader");
 let currentTime = new Date();
 date.innerHTML = formatDate(currentTime);
 
+function displayForecast(respond) {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = ` <div class="row">`;
+  console.log(respond.data);
+  // let days={"Sun","Mon","Tue","Wed","Thur","Fri","Sat"};
+  forecastHTML =
+    forecastHTML +
+    `<div class="col-2">
+       <div class="weather-forecast-date">Wed</div>
+       <img src="images/Cloudy.svg" width="48px" alt=""></img>
+       <div class="temperature-forecast">
+         <span class="weather-forecast-temp-max">66°</span>
+         <span class="weather-forecast-temp-min">26°</span>
+       </div>
+     </div>
+   `;
+  forecastHTML = forecastHTML + ` </div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "ca32155fa8562e7d4743f24dd7e13dc9";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
 function showTemperature(respond) {
   let iconElement = document.querySelector("#icon");
   document.querySelector(`h1`).innerHTML = respond.data.name;
@@ -44,6 +70,8 @@ function showTemperature(respond) {
   );
   iconElement.setAttribute("alt", respond.data.weather[0].description);
   fahrenheitTemperature = respond.data.main.temp;
+
+  getForecast(respond.data.coord);
 }
 
 function showPosition(position) {
