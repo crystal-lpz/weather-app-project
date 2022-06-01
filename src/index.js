@@ -70,6 +70,7 @@ function getForecast(coordinates) {
   axios.get(apiUrl).then(displayForecast);
 }
 function showTemperature(respond) {
+  console.log(respond.data);
   let iconElement = document.querySelector("#icon");
   document.querySelector(`h1`).innerHTML = respond.data.name;
   document.querySelector("#main-temp").innerHTML = Math.round(
@@ -79,6 +80,13 @@ function showTemperature(respond) {
   document.querySelector("#wind-speed").innerHTML = Math.round(
     respond.data.wind.speed
   );
+  document.querySelector("#max-temp").innerHTML = Math.round(
+    respond.data.main.temp_max
+  );
+  document.querySelector("#min-temp").innerHTML = Math.round(
+    respond.data.main.temp_min
+  );
+  // document.querySelector(".timeHeader").innerHTML = calcTime(respond.data.dt);
 
   document.querySelector(`#description`).innerHTML =
     respond.data.weather[0].description;
