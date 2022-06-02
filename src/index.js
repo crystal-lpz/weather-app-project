@@ -1,30 +1,8 @@
-function formatDate(date) {
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thurday",
-    "Friday",
-    "Saturday",
-  ];
-  let day = days[date.getDay()];
-
-  let hours = date.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-  let minutes = date.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-
-  return `${day}  ${hours}:${minutes} `;
+function updateTime(timezone) {
+  let time = document.querySelector("#time-placement");
+  let timePLace = luxon.DateTime.now().setZone(timezone);
+  time.innerHTML = timePLace.toFormat(`cccc t`);
 }
-let date = document.querySelector(".timeHeader");
-let currentTime = new Date();
-date.innerHTML = formatDate(currentTime);
-
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
@@ -63,6 +41,7 @@ function displayForecast(respond) {
   });
   forecastHTML = forecastHTML + ` </div>`;
   forecastElement.innerHTML = forecastHTML;
+  updateTime(respond.data.timezone);
 }
 function getForecast(coordinates) {
   let apiKey = "ca32155fa8562e7d4743f24dd7e13dc9";
