@@ -1,8 +1,12 @@
 function updateTime(timezone) {
   let time = document.querySelector("#time-placement");
+  let currentTime = document.querySelector("h2");
   let timePLace = luxon.DateTime.now().setZone(timezone);
+  let currentPlace = luxon.DateTime.now();
   time.innerHTML = timePLace.toFormat(`cccc t`);
+  currentTime.innerHTML = currentPlace.toFormat(`DDDD t`);
 }
+
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
@@ -136,4 +140,4 @@ celsiusLink.addEventListener("click", displayCelsiusTemperature);
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
-search("San Francisco");
+search("New York");

@@ -1,10 +1,15 @@
+html {
+  height: 100%;
+}
 body {
+  background: linear-gradient(rgb(214, 224, 255), rgb(254, 168, 168));
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   margin: 0 auto;
   padding-top: 40px;
   display: block;
   font-family: "K2D", sans-serif;
   color: #48484a;
-  background-color: rgb(163, 176, 218);
 }
 h1 {
   text-align: right;
@@ -14,12 +19,19 @@ h1 {
   margin-bottom: 0;
   color: #343435;
 }
+h2 {
+  text-align: center;
+  font-size: 15px;
+  margin: 0 auto;
+  color: #48484a;
+}
 h5 {
   margin: 0;
   padding-bottom: 40px;
   text-align: center;
   font-size: 15px;
 }
+
 ul {
   margin: 0;
   padding: 0;
@@ -29,7 +41,13 @@ li {
   margin: 0;
   padding: 0;
 }
-
+.sourceLink {
+  color: #ec6e4c;
+}
+.sourceLink:hover {
+  text-decoration: none;
+  color: #343435;
+}
 #cityInfo {
   display: block;
   top: 1px;
@@ -62,13 +80,9 @@ li {
   margin-left: 5px;
 }
 .weather-app {
-  border: 3px solid #7878ac;
   border-radius: 10px;
-  background: linear-gradient(
-    180.3deg,
-    rgb(214, 224, 255) 37.2%,
-    rgb(254, 168, 168) 137.3%
-  );
+  background: lavenderblush;
+  box-shadow: 5px 5px 5px #6c7db156;
   padding: 20px;
   padding-bottom: 40px;
   margin: 20px auto;
@@ -88,7 +102,12 @@ li {
 .active:hover {
   text-decoration: none;
 }
-
+#humidity,
+#max-temp,
+#min-temp {
+  color: #ec6e4c;
+  font-weight: 20px;
+}
 .units {
   margin-top: 20px;
   margin-bottom: 0;
@@ -99,20 +118,20 @@ li {
 .seven-day-forecast {
   text-align: center;
   margin-top: 20px;
-  color: black;
-  /* border: 1.5px solid #48484a; */
-  background-color: #7878ac48;
+  color: #48484a;
+  background-color: #8a8ab31a;
   border-radius: 10px;
   padding: 10px;
 }
 .weather-forecast-date {
   font-size: 16px;
-  opacity: 0.5;
+  opacity: 0.7;
 }
 .weather-forecast-temp-min {
-  opacity: 0.5;
+  opacity: 0.7;
 }
 .temperature-forecast {
-  color: #202124;
+  color: #ec6e4c;
   font-size: 13px;
+  font-weight: bold;
 }
