@@ -21,9 +21,10 @@ h1 {
 }
 h2 {
   text-align: center;
-  font-size: 15px;
+  font-size: 20px;
   margin: 0 auto;
   color: #48484a;
+  padding: 5px;
 }
 h5 {
   margin: 0;
@@ -31,7 +32,14 @@ h5 {
   text-align: center;
   font-size: 15px;
 }
-
+#current-time-topRow {
+  border-radius: 10px;
+  background: lavenderblush;
+  box-shadow: 5px 5px 5px #6c7db156;
+  margin: 0 auto;
+  max-width: 700px;
+  bottom: 10px;
+}
 ul {
   margin: 0;
   padding: 0;
@@ -74,9 +82,9 @@ li {
 }
 .weather-description {
   display: block;
-  line-height: 16px;
+  line-height: 18px;
   text-align: left;
-  font-size: 12px;
+  font-size: 15px;
   margin-left: 5px;
 }
 .weather-app {
@@ -104,7 +112,8 @@ li {
 }
 #humidity,
 #max-temp,
-#min-temp {
+#min-temp,
+#wind-speed {
   color: #ec6e4c;
   font-weight: 20px;
 }
@@ -119,14 +128,15 @@ li {
   text-align: center;
   margin-top: 20px;
   color: #48484a;
-  background-color: #8a8ab31a;
+  background-color: #81699b3a;
   border-radius: 10px;
   padding: 10px;
 }
 .weather-forecast-date {
   font-size: 16px;
-  opacity: 0.7;
+  opacity: 0.9;
 }
+
 .weather-forecast-temp-min {
   opacity: 0.7;
 }

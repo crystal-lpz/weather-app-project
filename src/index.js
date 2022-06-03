@@ -1,6 +1,6 @@
 function updateTime(timezone) {
   let time = document.querySelector("#time-placement");
-  let currentTime = document.querySelector("h2");
+  let currentTime = document.querySelector("#last-update");
   let timePLace = luxon.DateTime.now().setZone(timezone);
   let currentPlace = luxon.DateTime.now();
   time.innerHTML = timePLace.toFormat(`cccc t`);
@@ -30,6 +30,7 @@ function displayForecast(respond) {
           }@2x.png"
           alt=""
           width="42"
+          class="weather-forecast-img"
         />
        <div class="temperature-forecast">
          <span class="weather-forecast-temp-max">${Math.round(
