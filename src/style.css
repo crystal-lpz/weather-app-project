@@ -4,6 +4,7 @@ body {
   display: block;
   font-family: "K2D", sans-serif;
   color: #48484a;
+  background-color: rgb(163, 176, 218);
 }
 h1 {
   text-align: right;
@@ -61,7 +62,7 @@ li {
   margin-left: 5px;
 }
 .weather-app {
-  border: 1.5px solid #48484a;
+  border: 3px solid #7878ac;
   border-radius: 10px;
   background: linear-gradient(
     180.3deg,
@@ -99,7 +100,8 @@ li {
   text-align: center;
   margin-top: 20px;
   color: black;
-  border: 1.5px solid #48484a;
+  /* border: 1.5px solid #48484a; */
+  background-color: #7878ac48;
   border-radius: 10px;
   padding: 10px;
 }
