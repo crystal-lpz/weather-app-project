@@ -126,6 +126,7 @@ function lookUp(event) {
 }
 
 let fahrenheitTemperature = null;
+
 let citySearch = document.querySelector("#search-form");
 citySearch.addEventListener("submit", lookUp);
 

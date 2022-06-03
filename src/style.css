@@ -54,7 +54,7 @@ li {
   display: inline;
   line-height: 48px;
 }
-.phw {
+.weather-description {
   display: block;
   line-height: 16px;
   text-align: left;
