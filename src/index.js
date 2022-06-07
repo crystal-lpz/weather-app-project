@@ -3,8 +3,8 @@ function updateTime(timezone) {
   let currentTime = document.querySelector("#last-update");
   let timePLace = luxon.DateTime.now().setZone(timezone);
   let currentPlace = luxon.DateTime.now();
-  time.innerHTML = timePLace.toFormat(`cccc t`);
-  currentTime.innerHTML = currentPlace.toFormat(`DDDD t`);
+  time.innerHTML = timePLace.toFormat(`cccc hh:mm a`);
+  currentTime.innerHTML = currentPlace.toFormat(`DDDD hh:mm a`);
 }
 
 function formatDay(timestamp) {
@@ -35,14 +35,16 @@ function displayForecast(respond) {
        <div class="temperature-forecast">
          <span class="weather-forecast-temp-max">${Math.round(
            forecastDay.temp.max
-         )}°</span>
+         )}</span>°
          <span class="weather-forecast-temp-min">${Math.round(
            forecastDay.temp.min
-         )}°</span>
+         )}</span>°
        </div>
      </div>
    `;
     }
+    forecastMinTemp = forecastDay.temp.min;
+    forecastMaxTemp = forecastDay.temp.max;
   });
   forecastHTML = forecastHTML + ` </div>`;
   forecastElement.innerHTML = forecastHTML;
@@ -114,8 +116,23 @@ function displayCelsiusTemperature(event) {
   let celsiusTemperature = ((fahrenheitTemperature - 32) * 5) / 9;
   let temperatureElement = document.querySelector("#main-temp");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
-}
 
+  let forecastMin = document.querySelectorAll(".weather-forecast-temp-min");
+  forecastMin.forEach(function (item) {
+    let currentMin = item.innerHTML;
+    let celsius = Math.round(((currentMin - 32) * 5) / 9);
+    item.innerHTML = celsius;
+  });
+
+  let forecastMax = document.querySelectorAll(".weather-forecast-temp-max");
+  forecastMax.forEach(function (item) {
+    let currentMin = item.innerHTML;
+    let celsius = Math.round(((currentMin - 32) * 5) / 9);
+    item.innerHTML = celsius;
+  });
+  celsiusLink.removeEventListener("click", displayCelsiusTemperature);
+  fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+}
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
   celsiusLink.classList.remove("active");
@@ -123,7 +140,24 @@ function displayFahrenheitTemperature(event) {
 
   let temperatureElement = document.querySelector("#main-temp");
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+
+  let forecastMin = document.querySelectorAll(".weather-forecast-temp-min");
+  forecastMin.forEach(function (item) {
+    let currentMin = item.innerHTML;
+    let celsius = Math.round((currentMin * 9) / 5 + 32);
+    item.innerHTML = celsius;
+  });
+
+  let forecastMax = document.querySelectorAll(".weather-forecast-temp-max");
+  forecastMax.forEach(function (item) {
+    let currentMin = item.innerHTML;
+    let fahrenheit = Math.round((currentMin * 9) / 5 + 32);
+    item.innerHTML = fahrenheit;
+  });
+  fahrenheitLink.removeEventListener("click", displayFahrenheitTemperature);
+  celsiusLink.addEventListener("click", displayCelsiusTemperature);
 }
+
 function lookUp(event) {
   event.preventDefault();
   let cityInputElement = document.querySelector("#city-input");
@@ -131,6 +165,9 @@ function lookUp(event) {
 }
 
 let fahrenheitTemperature = null;
+let celsiusTemperature = null;
+let forecastMinTemp = null;
+let forecastMaxTemp = null;
 
 let citySearch = document.querySelector("#search-form");
 citySearch.addEventListener("submit", lookUp);
