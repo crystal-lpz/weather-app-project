@@ -67,8 +67,11 @@ li {
 }
 .topImg {
   max-width: 70px;
-  margin-left: 26px;
+  margin-left: 14px;
   margin-top: -8px;
+  background-color: #81699b3a;
+  border: 2px;
+  border-radius: 60px;
 }
 #main-row {
   margin-top: 20px;
@@ -79,6 +82,7 @@ li {
   font-weight: 400;
   display: inline;
   line-height: 48px;
+  margin-left: -18px;
 }
 .weather-description {
   display: block;
@@ -89,7 +93,7 @@ li {
 }
 .weather-app {
   border-radius: 10px;
-  background: lavenderblush;
+  background: #ffecf2f6;
   box-shadow: 5px 5px 5px #6c7db156;
   padding: 20px;
   padding-bottom: 40px;
@@ -145,4 +149,19 @@ li {
   color: #ec6e4c;
   font-size: 13px;
   font-weight: bold;
+}
+
+#search {
+  color: #ec6e4c;
+}
+#search:hover {
+  background-color: #ec6e4c;
+  color: antiquewhite;
+}
+#current-location {
+  background-color: #ec6e4c;
+}
+#current-location:hover {
+  background-color: transparent;
+  color: #ec6e4c;
 }

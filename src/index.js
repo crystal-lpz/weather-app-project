@@ -1,24 +1,27 @@
+// Date
 function updateTime(timezone) {
   let time = document.querySelector("#time-placement");
   let currentTime = document.querySelector("#last-update");
   let timePLace = luxon.DateTime.now().setZone(timezone);
   let currentPlace = luxon.DateTime.now();
-  time.innerHTML = timePLace.toFormat(`cccc hh:mm a`);
-  currentTime.innerHTML = currentPlace.toFormat(`DDDD hh:mm a`);
+  time.innerHTML = timePLace.toFormat(`cccc HH:mm`);
+  currentTime.innerHTML = currentPlace.toFormat(`DDDD HH:mm`);
 }
 
+// Day forecast
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
   let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
   return days[day];
 }
+// Daily forecast
 function displayForecast(respond) {
   let forecast = respond.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = ` <div class="row">`;
   forecast.forEach(function (forecastDay, index) {
-    if (index < 6) {
+    if (index > 0 && index < 7) {
       forecastHTML =
         forecastHTML +
         `<div class="col-2">
@@ -48,11 +51,15 @@ function displayForecast(respond) {
   forecastElement.innerHTML = forecastHTML;
   updateTime(respond.data.timezone);
 }
+
+// Coordinates for forecast
 function getForecast(coordinates) {
   let apiKey = "ca32155fa8562e7d4743f24dd7e13dc9";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayForecast);
 }
+
+// Display Temperature and Info
 function showTemperature(respond) {
   let iconElement = document.querySelector("#icon");
   let mainTemp = document.querySelector("#main-temp");
@@ -64,12 +71,12 @@ function showTemperature(respond) {
   let description = document.querySelector(`#description`);
 
   city.innerHTML = respond.data.name;
-  mainTemp.innerHTML = Math.round(respond.data.main.temp);
   humidity.innerHTML = respond.data.main.humidity;
   windSpeed.innerHTML = Math.round(respond.data.wind.speed);
   maxTemp.innerHTML = Math.round(respond.data.main.temp_max);
   minTemp.innerHTML = Math.round(respond.data.main.temp_min);
   description.innerHTML = respond.data.weather[0].description;
+  mainTemp.innerHTML = Math.round(respond.data.main.temp);
 
   iconElement.setAttribute(
     "src",
@@ -78,9 +85,12 @@ function showTemperature(respond) {
   iconElement.setAttribute("alt", respond.data.weather[0].description);
 
   fahrenheitTemperature = respond.data.main.temp;
+
+  // Calling Coordinates for forecast
   getForecast(respond.data.coord);
 }
 
+// Current Position Button + geolocation
 function showPosition(position) {
   let apiKey = "ca32155fa8562e7d4743f24dd7e13dc9";
   let imperialUnit = "imperial";
@@ -91,13 +101,16 @@ function showPosition(position) {
   axios.get(apiUrl).then(showTemperature);
 }
 
+// Navigator Geolocation
 function getCurrentPosition(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showPosition);
 }
+// Button for current location
 let button = document.querySelector("#current-location");
 button.addEventListener("click", getCurrentPosition);
 
+// axios API
 function search(city) {
   let apiKey = "ca32155fa8562e7d4743f24dd7e13dc9";
   let imperialUnit = "imperial";
@@ -106,6 +119,7 @@ function search(city) {
   axios.get(apiUrl).then(showTemperature);
 }
 
+//Celcius
 function displayCelsiusTemperature(event) {
   event.preventDefault();
   fahrenheitLink.classList.remove("active");
@@ -154,6 +168,7 @@ function displayCelsiusTemperature(event) {
   fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 }
 
+// Fahrenheit
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
   celsiusLink.classList.remove("active");
@@ -201,6 +216,7 @@ function displayFahrenheitTemperature(event) {
   celsiusLink.addEventListener("click", displayCelsiusTemperature);
 }
 
+// API response Searching City name
 function lookUp(event) {
   event.preventDefault();
   let cityInputElement = document.querySelector("#city-input");
@@ -211,13 +227,17 @@ let fahrenheitTemperature = null;
 let celsiusTemperature = null;
 let forecastMinTemp = null;
 let forecastMaxTemp = null;
+
+// Calling function (lookup)
 let citySearch = document.querySelector("#search-form");
 citySearch.addEventListener("submit", lookUp);
 
+//Calling function (Celcius)
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
+// Calling function (Fahrenheit)
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
-search("San Francisco");
+search("new york");
