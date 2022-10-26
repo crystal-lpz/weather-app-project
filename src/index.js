@@ -32,6 +32,7 @@ function displayForecast(respond) {
           }@2x.png"
           alt=""
           width="42"
+          class="weather-forecast-icon"
         />
        <div class="temperature-forecast">
          <span class="weather-forecast-temp-max">${Math.round(
