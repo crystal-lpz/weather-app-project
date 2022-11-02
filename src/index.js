@@ -86,6 +86,10 @@ function showTemperature(respond) {
   iconElement.setAttribute("alt", respond.data.weather[0].description);
 
   fahrenheitTemperature = respond.data.main.temp;
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  celsiusLink.addEventListener("click", displayCelsiusTemperature);
+  fahrenheitLink.removeEventListener("click", displayFahrenheitTemperature);
 
   // Calling Coordinates for forecast
   getForecast(respond.data.coord);
@@ -99,12 +103,14 @@ function showPosition(position) {
   let longitude = position.coords.longitude;
   let baseLink = "https://api.openweathermap.org/data/2.5/weather?";
   let apiUrl = `${baseLink}lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${imperialUnit}`;
+
   axios.get(apiUrl).then(showTemperature);
 }
 
 // Navigator Geolocation
 function getCurrentPosition(event) {
   event.preventDefault();
+
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 // Button for current location
@@ -120,7 +126,7 @@ function search(city) {
   axios.get(apiUrl).then(showTemperature);
 }
 
-//Celcius
+//// Celcius////
 function displayCelsiusTemperature(event) {
   event.preventDefault();
   fahrenheitLink.classList.remove("active");
@@ -169,7 +175,7 @@ function displayCelsiusTemperature(event) {
   fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 }
 
-// Fahrenheit
+//// Fahrenheit////
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
   celsiusLink.classList.remove("active");
