@@ -28,7 +28,7 @@ function displayForecast(respond) {
        <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
         <img
         
-          src="/img/${forecastDay.weather[0].icon}.svg"
+          src="img/${forecastDay.weather[0].icon}.svg"
           alt=""
           width="42"
           class="weather-forecast-icon"
@@ -78,11 +78,7 @@ function showTemperature(respond) {
   description.innerHTML = respond.data.weather[0].description;
   mainTemp.innerHTML = Math.round(respond.data.main.temp);
 
-  // iconElement.setAttribute(
-  //   "src",
-  //   ` http://openweathermap.org/img/wn/${respond.data.weather[0].icon}@2x.png`
-  // );
-  iconElement.setAttribute(`src`, `/img/${respond.data.weather[0].icon}.svg`);
+  iconElement.setAttribute(`src`, `img/${respond.data.weather[0].icon}.svg`);
 
   iconElement.setAttribute("alt", respond.data.weather[0].description);
 
