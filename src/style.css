@@ -285,5 +285,6 @@ li {
   .weather-forecast-icon {
     width: 30px;
     filter: invert(1);
+    margin: 0 auto;
   }
 }
