@@ -58,6 +58,7 @@ a {
   font-weight: lighter;
   text-decoration: none;
 }
+
 #current-time-topRow {
   border-radius: 10px;
   background: transparent;
@@ -115,7 +116,19 @@ li {
   border: 2px solid white;
   color: white;
 }
-.placeholder {
+#city-input::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
+#city-input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: white;
+}
+
+#city-input::-ms-input-placeholder {
+  /* Microsoft Edge */
   color: white;
 }
 .weather-description {
@@ -148,6 +161,7 @@ li {
   cursor: default;
 }
 .active:hover {
+  color: white;
   text-decoration: none;
 }
 #humidity,
@@ -163,6 +177,11 @@ li {
   position: relative;
   font-size: 16px;
   top: -27px;
+}
+.units a:hover {
+  text-decoration: none;
+  color: white;
+  opacity: 0.7;
 }
 .seven-day-forecast {
   text-align: center;
