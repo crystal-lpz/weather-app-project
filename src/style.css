@@ -2,28 +2,48 @@ html {
   height: 100%;
 }
 body {
-  background: linear-gradient(rgb(214, 224, 255), rgb(254, 168, 168));
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background: linear-gradient(
+    -45deg,
+    #ee7752,
+    #e73c7e,
+    #23a6d5,
+    #23d5ab,
+    #a4af69
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
   margin: 0 auto;
   padding-top: 40px;
   display: block;
-  font-family: "K2D", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   color: #48484a;
 }
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 h1 {
   text-align: right;
   font-size: 22px;
   font-weight: bolder;
   line-height: 26px;
   margin-bottom: 0;
-  color: #343435;
+  color: white;
+  /* color: #343435; */
 }
 h2 {
   text-align: center;
   font-size: 20px;
   margin: 0 auto;
-  color: #48484a;
+  color: white;
   padding: 5px;
 }
 h5 {
@@ -31,11 +51,16 @@ h5 {
   padding-bottom: 40px;
   text-align: center;
   font-size: 15px;
+  color: white;
+}
+a {
+  color: white;
+  font-weight: lighter;
+  text-decoration: none;
 }
 #current-time-topRow {
   border-radius: 10px;
-  background: lavenderblush;
-  box-shadow: 5px 5px 5px #6c7db156;
+  background: transparent;
   margin: 0 auto;
   max-width: 700px;
   bottom: 10px;
@@ -50,11 +75,11 @@ li {
   padding: 0;
 }
 .sourceLink {
-  color: #ec6e4c;
+  color: white;
 }
 .sourceLink:hover {
   text-decoration: none;
-  color: #343435;
+  color: white;
 }
 #cityInfo {
   display: block;
@@ -67,11 +92,11 @@ li {
 }
 .topImg {
   max-width: 70px;
-  margin-left: 14px;
-  margin-top: -8px;
-  background-color: #81699b3a;
-  border: 2px;
-  border-radius: 60px;
+  margin-left: 24px;
+  filter: invert(1);
+}
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 2, "wght" 700, "GRAD" 200, "opsz" 48;
 }
 #main-row {
   margin-top: 20px;
@@ -84,6 +109,15 @@ li {
   line-height: 48px;
   margin-left: -18px;
 }
+#city-input {
+  background-color: transparent;
+  opacity: 1;
+  border: 2px solid white;
+  color: white;
+}
+.placeholder {
+  color: white;
+}
 .weather-description {
   display: block;
   line-height: 18px;
@@ -92,9 +126,10 @@ li {
   margin-left: 5px;
 }
 .weather-app {
+  color: white;
+  border: 2px solid white;
   border-radius: 10px;
-  background: #ffecf2f6;
-  box-shadow: 5px 5px 5px #6c7db156;
+  background: transparent;
   padding: 20px;
   padding-bottom: 40px;
   margin: 20px auto;
@@ -108,7 +143,8 @@ li {
   padding: 0;
 }
 .active {
-  color: #48484a;
+  color: white;
+  font-weight: bold;
   cursor: default;
 }
 .active:hover {
@@ -118,7 +154,7 @@ li {
 #max-temp,
 #min-temp,
 #wind-speed {
-  color: #ec6e4c;
+  color: white;
   font-weight: 20px;
 }
 .units {
@@ -131,10 +167,14 @@ li {
 .seven-day-forecast {
   text-align: center;
   margin-top: 20px;
-  color: #48484a;
-  background-color: #81699b3a;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.178);
   border-radius: 10px;
   padding: 10px;
+}
+.weather-forecast-icon {
+  filter: invert(1);
+  padding: 5px;
 }
 .weather-forecast-date {
   font-size: 16px;
@@ -146,25 +186,29 @@ li {
   opacity: 0.7;
 }
 .temperature-forecast {
-  color: #ec6e4c;
+  color: white;
   font-size: 13px;
   font-weight: bold;
 }
-
+.btn-main {
+  border: 2px solid white;
+}
+.btn-main:hover {
+  font-weight: bold;
+}
 #search {
-  color: #ec6e4c;
+  color: rgb(255, 255, 255);
 }
-#search:hover {
-  background-color: #ec6e4c;
-  color: antiquewhite;
-}
+
 #current-location {
-  background-color: #ec6e4c;
+  color: white;
+  background-color: transparent;
 }
 #current-location:hover {
   background-color: transparent;
-  color: #ec6e4c;
+  color: white;
 }
+
 @media (max-width: 576px) {
   h1 {
     font-size: 34px;
@@ -203,6 +247,7 @@ li {
     justify-content: space-evenly;
     margin-top: 14px;
     margin-left: 110px;
+    font-weight: bold;
   }
   #weather-description-HL span {
     margin-right: 8px;
@@ -239,5 +284,6 @@ li {
 
   .weather-forecast-icon {
     width: 30px;
+    filter: invert(1);
   }
 }
