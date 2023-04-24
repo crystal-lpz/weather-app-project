@@ -100,7 +100,7 @@ li {
 }
 .topImg {
   filter: invert(1);
-  margin-left: -13px;
+  margin-left: 0px;
   margin-top: -70px;
 }
 .material-symbols-outlined {
@@ -144,6 +144,7 @@ li {
   text-align: left;
   font-size: 15px;
   margin-left: 5px;
+  margin-bottom: 34px;
 }
 .weather-app {
   color: white;
@@ -268,7 +269,10 @@ li {
     margin-left: 0;
     margin: 100px 10px;
   }
-
+  .weather-description {
+    margin-left: 0px;
+    margin-bottom: 0px;
+  }
   #weather-description-HL {
     display: block;
     position: relative;
