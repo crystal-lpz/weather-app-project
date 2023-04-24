@@ -11,12 +11,20 @@
       crossorigin="anonymous"
     />
 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,800;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
 
-<!--  -->
+    <!--  -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://moment.github.io/luxon/global/luxon.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
@@ -24,16 +32,14 @@
     <title>Weather</title>
   </head>
   <body>
-    
     <div class="container mt-4">
-      <div class="row" id="current-time-topRow" >
-          <h2><span id="last-update"></span></h2> 
-        </div>
+      <div class="row" id="current-time-topRow">
+        <h2><span id="last-update"></span></h2>
+      </div>
       <div class="weather-app">
         <form class="search-form" id="search-form">
           <div class="row searchBar">
             <div class="col-6">
-              
               <input
                 type="search"
                 placeholder="Type a city.."
@@ -43,16 +49,16 @@
                 class="form-control shadow-sm"
               />
             </div>
-              <div class="col-3">
+            <div class="col-3">
               <input
                 type="submit"
                 value="Search"
-                class="form-control btn btn-main shadow-sm "
+                class="form-control btn btn-main shadow-sm"
                 id="search"
               />
             </div>
-        </form>  
-             <div class="col-3">
+
+            <div class="col-3">
               <input
                 type="submit"
                 value="Current"
@@ -60,50 +66,58 @@
                 id="current-location"
               />
             </div>
-      </div>
-        
-        
-        <div class="row" id="main-row">
-           <div class="col-6"> 
-           <div class="row secondrow">
-          
-                <div class="col-4" >
-                 <img class="topImg material-symbols-outlined" id="icon" src=" " />
-                 </div>
-
-                <div class="col-4">
-                <strong id="main-temp"></strong>
-                <span class="units"><a href="#" id="fahrenheit-link" class="active">°F </a> | <a href="#" id="celsius-link"> °C</a></span> 
-                 </div>
-   
-                   <div class="col-4">
-                      <ul><div class="weather-description ">
-                     <li id="weather-description-humidity"> Humidity: <span id="humidity"></span> %</li>
-                     <li id="weather-description-wind">Wind: <span id="wind-speed"> </span> <span id="windspeed-unit">mph</span></li>
-                     <li id="weather-description-HL">H: <span id="max-temp"> </span> L: <span id="min-temp"> </span></li>
-                    </div>
-                      </ul>
-                    </div>
-           </div>
-           </div>
-                <div class="col-6" id="cityInfo"> 
-                <h1></h1>
-                <ul>
-                <li class="timeHeader" id="time-placement"></li>
-                <li class="description" id="description"></li>  
-               </ul>
-                </div> 
-          
+          </div>
+        </form>
+        <div class="grid" id="main-row">
+          <div>
+            <img class="topImg material-symbols-outlined" id="icon" src=" " />
+          </div>
+          <div>
+            <strong id="main-temp"></strong>
+          </div>
+          <div>
+            <span class="units"
+              ><a href="#" id="fahrenheit-link" class="active">°F </a> |
+              <a href="#" id="celsius-link"> °C</a></span
+            >
+          </div>
+          <div>
+            <ul>
+              <div class="weather-description">
+                <li id="weather-description-humidity">
+                  Humidity: <span id="humidity"></span> %
+                </li>
+                <li id="weather-description-wind">
+                  Wind: <span id="wind-speed"> </span>
+                  <span id="windspeed-unit">mph</span>
+                </li>
+                <li id="weather-description-HL">
+                  H: <span id="max-temp"> </span> L:
+                  <span id="min-temp"> </span>
+                </li>
+              </div>
+            </ul>
+          </div>
+          <div id="cityInfo">
+            <h1></h1>
+            <ul>
+              <li class="timeHeader" id="time-placement"></li>
+              <li class="description" id="description"></li>
+            </ul>
+          </div>
         </div>
+      </div>
 
-        <div class="seven-day-forecast" id="forecast">
-       </div>
-  
+      <div class="container seven-day-forecast" id="forecast"></div>
+      <h5>
+        <a
+          href="https://github.com/crystal-lpz/weather-app-project"
+          target="_blank"
+          class="sourceLink"
+          >Open-source code </a
+        >by Crystal Lopez
+      </h5>
     </div>
-      <h5> <a href="https://github.com/crystal-lpz/weather-app-project"target="_blank" class="sourceLink">Open-source code </a>by Crystal Lopez</h5>
-    </div>
-    </div>
-     <script src="src/index.js"></script>
+    <script src="src/index.js"></script>
   </body>
-
 </html>

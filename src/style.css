@@ -15,7 +15,7 @@ body {
   margin: 0 auto;
   padding-top: 40px;
   display: block;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
   color: #48484a;
 }
 @keyframes gradient {
@@ -37,7 +37,6 @@ h1 {
   line-height: 26px;
   margin-bottom: 0;
   color: white;
-  /* color: #343435; */
 }
 h2 {
   text-align: center;
@@ -48,7 +47,7 @@ h2 {
 }
 h5 {
   margin: 0;
-  padding-bottom: 40px;
+  padding-top: 26px;
   text-align: center;
   font-size: 15px;
   color: white;
@@ -58,7 +57,11 @@ a {
   font-weight: lighter;
   text-decoration: none;
 }
-
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 2fr 2fr;
+  align-items: center;
+}
 #current-time-topRow {
   border-radius: 10px;
   background: transparent;
@@ -75,6 +78,9 @@ li {
   margin: 0;
   padding: 0;
 }
+.row {
+  align-items: center;
+}
 .sourceLink {
   color: white;
 }
@@ -90,25 +96,28 @@ li {
   text-transform: capitalize;
   font-weight: 400;
   line-height: 20px;
+  margin-top: -34px;
 }
 .topImg {
-  max-width: 70px;
-  margin-left: 24px;
   filter: invert(1);
+  margin-left: -13px;
+  margin-top: -70px;
 }
 .material-symbols-outlined {
   font-variation-settings: "FILL" 2, "wght" 700, "GRAD" 200, "opsz" 48;
 }
 #main-row {
-  margin-top: 20px;
+  margin-top: 36px;
   vertical-align: top;
+  margin-left: 30px;
 }
 #main-row strong {
-  font-size: 48px;
+  font-size: 8.7rem;
   font-weight: 400;
   display: inline;
+  letter-spacing: -7.1px;
   line-height: 48px;
-  margin-left: -18px;
+  margin-left: -29px;
 }
 #city-input {
   background-color: transparent;
@@ -172,11 +181,10 @@ li {
   font-weight: 20px;
 }
 .units {
-  margin-top: 20px;
-  margin-bottom: 0;
   position: relative;
   font-size: 16px;
-  top: -27px;
+  top: -49px;
+  margin-left: -19px;
 }
 .units a:hover {
   text-decoration: none;
@@ -190,6 +198,7 @@ li {
   background-color: rgba(255, 255, 255, 0.178);
   border-radius: 10px;
   padding: 10px;
+  max-width: 700px;
 }
 .weather-forecast-icon {
   filter: invert(1);
@@ -234,54 +243,48 @@ li {
     text-align: center;
     margin-bottom: 10px;
   }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 10px;
+  }
   #cityInfo {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    margin-top: -24px;
+  }
+  .topImg {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px;
   }
 
   .units {
-    display: flex;
-    justify-content: space-between;
-    font-size: 15px;
-    top: -19px;
-  }
-  .secondrow .col-4 {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    margin-right: 10px;
-  }
-  .secondrow {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    top: 0;
+    bottom: 1;
+    position: relative;
+    font-size: 16px;
+    margin-left: 0;
+    margin: 100px 10px;
   }
 
   #weather-description-HL {
-    display: flex;
-    justify-content: center;
-    justify-content: space-evenly;
-    margin-top: 14px;
-    margin-left: 110px;
-    font-weight: bold;
-  }
-  #weather-description-HL span {
-    margin-right: 8px;
-  }
-  #main-row {
-    display: flex;
-    flex-direction: column-reverse;
-    align-content: center;
-  }
-  #main-row strong {
-    font-size: 58px;
-    margin-bottom: 10px;
-    margin-left: 80px;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    top: 65px;
   }
 
+  #main-row strong {
+    font-size: 8rem;
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
   #weather-description-wind,
   #weather-description-humidity,
   .timeHeader,
@@ -289,6 +292,10 @@ li {
     display: none;
   }
 
+  .col-8 {
+    display: block;
+    margin: 0 auto;
+  }
   .search-form {
     width: 135%;
   }
