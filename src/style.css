@@ -1,9 +1,10 @@
 :root {
-  --clr-body-bg: linear-gradient(-45deg, #ffffff, #eaeaea, #d5d5d5, #d5d5d5);
-  --clr-border: #757c6c;
-  --clr-text: #757c6c;
-  --clr-heading: #fcf5e7;
-  --clr-button: #757c6c;
+  --clr-body-bg: linear-gradient(-45deg, #d6d3c4, #fcfbf7);
+  --clr-border: #2d232e;
+  --clr-text: #2d232e;
+  --clr-heading: #2d232e18;
+  --clr-button: #534b52be;
+  --clr-forecast: #2d232e2c;
 }
 html {
   height: 100%;
@@ -67,7 +68,7 @@ body {
   --radio-color: gray;
 }
 .color-picker input[type="radio"]#pink {
-  --radio-color: pink;
+  --radio-color: lightpink;
 }
 .color-picker input[type="radio"]#blue {
   --radio-color: lightblue;
@@ -80,67 +81,76 @@ body {
 }
 
 .pink {
-  --clr-body-bg: linear-gradient(-45deg, #db899b, #da788e, #aa4559, #923344);
-  --clr-text: #fcf5e7;
-  --clr-heading: #fcf5e7;
-  --clr-border: #fcf5e7;
-  --clr-button: #6d2734;
+  --clr-body-bg: linear-gradient(-45deg, #f4bbc9, #da788e);
+  --clr-text: #fae6e7;
+  --clr-heading: #6d273426;
+  --clr-border: #880d1e;
+  --clr-button: #880d1e;
+  --clr-forecast: #6d273426;
 }
 
 .blue {
-  --clr-body-bg: linear-gradient(-45deg, #add8e6, #4a9eb9, #08475c);
+   --clr-body-bg: linear-gradient(-45deg, #add8e6, #4a9eb9);
   --clr-text: #e0f5f1;
-  --clr-heading: #e0f5f1;
-  --clr-border: #e0f5f1;
+  --clr-heading: #e0f5f16e;
+  --clr-border: #005470;
   --clr-button: #005470;
+  --clr-forecast: #00547034;
 }
 
 .green {
-  --clr-text: #e7ffdc;
-  --clr-heading: #e7ffdc;
-  --clr-body-bg: linear-gradient(-45deg, #537545, #83a772, #537545, #a6c794);
-  --clr-border: #e7ffdc;
-  --clr-button: #364b2e;
+ --clr-text: #283618;
+  --clr-heading: #606c38;
+  --clr-body-bg: linear-gradient(-45deg, #899878, #e4e6c3);
+  --clr-border: #283618;
+  --clr-button: #606c38;
+  --clr-forecast: #606c3869;
 }
 
 .dark {
-  --clr-body-bg: linear-gradient(-45deg, #191c22, #222832, #2c343e, #1c2024);
+    --clr-body-bg: linear-gradient(-45deg, #272a30, #222725);
   --clr-border: #848772;
   --clr-text: #d3d5c4;
-  --clr-heading: #d3d5c4;
-  --clr-button: #bdc2bc;
+  --clr-heading: #d3d5c4bd;
+  --clr-button: #8d8f8c;
+  --clr-forecast: #bdc2bc33;
+}
 }
 
 :root:has(#pink:checked) {
-  --clr-body-bg: linear-gradient(-45deg, #db899b, #da788e, #aa4559, #923344);
-  --clr-text: #fcf5e7;
-  --clr-heading: #fcf5e7;
-  --clr-border: #fcf5e7;
-  --clr-button: #6d2734;
+  --clr-body-bg: linear-gradient(-45deg, #f4bbc9, #da788e);
+  --clr-text: #fae6e7;
+  --clr-heading: #6d273426;
+  --clr-border: #880d1e;
+  --clr-button: #880d1e;
+  --clr-forecast: #6d273426;
 }
 
 :root:has(#blue:checked) {
-  --clr-body-bg: linear-gradient(-45deg, #add8e6, #4a9eb9, #08475c);
+  --clr-body-bg: linear-gradient(-45deg, #add8e6, #4a9eb9);
   --clr-text: #e0f5f1;
-  --clr-heading: #e0f5f1;
-  --clr-border: #e0f5f1;
+  --clr-heading: #e0f5f16e;
+  --clr-border: #005470;
   --clr-button: #005470;
+  --clr-forecast: #00547034;
 }
 
 :root:has(#green:checked) {
-  --clr-text: #e7ffdc;
-  --clr-heading: #e7ffdc;
-  --clr-body-bg: linear-gradient(-45deg, #537545, #83a772, #537545, #a6c794);
-  --clr-border: #e7ffdc;
-  --clr-button: #364b2e;
+  --clr-text: #283618;
+  --clr-heading: #606c38;
+  --clr-body-bg: linear-gradient(-45deg, #899878, #e4e6c3);
+  --clr-border: #283618;
+  --clr-button: #606c38;
+  --clr-forecast: #606c3869;
 }
 
 :root:has(#dark:checked) {
-  --clr-body-bg: linear-gradient(-45deg, #191c22, #222832, #2c343e, #1c2024);
+  --clr-body-bg: linear-gradient(-45deg, #272a30, #222725);
   --clr-border: #848772;
   --clr-text: #d3d5c4;
-  --clr-heading: #d3d5c4;
-  --clr-button: #bdc2bc;
+  --clr-heading: #d3d5c4bd;
+  --clr-button: #8d8f8c;
+  --clr-forecast: #bdc2bc33;
 }
 
 h1 {
@@ -235,23 +245,23 @@ li {
 #city-input {
   background-color: transparent;
   opacity: 1;
-  border: 2px solid var(--clr-text);
+  border: 2px solid var(--clr-button);
   color: var(--clr-text);
 }
 #city-input::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: var(--clr-text);
+  color: var(--clr-button);
   opacity: 1; /* Firefox */
 }
 
 #city-input:-ms-input-placeholder {
   /* Internet Explorer 10-11 */
-  color: var(--clr-text);
+  color: var(--clr-button);
 }
 
 #city-input::-ms-input-placeholder {
   /* Microsoft Edge */
-  color: var(--clr-text);
+  color: var(--clr-button);
 }
 .weather-description {
   display: block;
@@ -299,6 +309,7 @@ li {
   font-size: 16px;
   top: -49px;
   margin-left: -19px;
+  color: var(--clr-text);
 }
 .units a:hover {
   text-decoration: none;
@@ -309,7 +320,7 @@ li {
   text-align: center;
   margin-top: 20px;
   color: var(--clr-text);
-  background-color: rgba(255, 255, 255, 0.178);
+  background-color: var(--clr-forecast);
   border-radius: 10px;
   padding: 10px;
   max-width: 700px;
@@ -332,31 +343,26 @@ li {
   font-size: 13px;
   font-weight: bold;
 }
+
 .btn-main {
+  color: var(--clr-text);
   background-color: var(--clr-button);
   border: 2px solid var(--clr-button);
 }
 .btn-main:hover {
-  font-weight: bold;
-}
-.btn-outline {
   background-color: transparent;
-  border: 2px solid var(--clr-text);
-}
-.btn-outline:hover {
-  background-color: red;
-}
-#search {
-  color: rgb(255, 255, 255);
+  border: 2px solid var(--clr-button);
+  color: var(--clr-button);
 }
 
-#current-location {
-  color: var(--clr-text);
-  background-color: transparent;
+.btn-outline {
+  color: var(--clr-button);
+  border: 2px solid var(--clr-button);
 }
-#current-location:hover {
-  background-color: transparent;
+.btn-outline:hover {
   color: var(--clr-text);
+  border: 2px solid var(--clr-button);
+  background-color: var(--clr-button);
 }
 
 @media (max-width: 576px) {
