@@ -345,7 +345,7 @@ li {
 }
 
 .btn-main {
-  color: var(--clr-text);
+  color:white;
   background-color: var(--clr-button);
   border: 2px solid var(--clr-button);
 }
@@ -360,7 +360,7 @@ li {
   border: 2px solid var(--clr-button);
 }
 .btn-outline:hover {
-  color: var(--clr-text);
+  color:white;
   border: 2px solid var(--clr-button);
   background-color: var(--clr-button);
 }
